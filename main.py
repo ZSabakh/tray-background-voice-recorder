@@ -99,11 +99,12 @@ class TrayIcon(QSystemTrayIcon):
             mp3_data += encoder.encode(frame)
         mp3_data += encoder.flush()
         filename = f"recording_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.mp3"
-        with open(filename, "wb") as f:
+        directory = "recordings"
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        with open(f"{directory}/{filename}", "wb") as f:
             f.write(mp3_data)
         self.currentRecording = None
-        print("Recording saved")
-
 
     def exitAction(self):
         self.hide()
