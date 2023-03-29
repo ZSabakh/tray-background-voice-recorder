@@ -1,15 +1,15 @@
-from datetime import datetime
 import os
 import subprocess
 import sys
 import threading
+from datetime import datetime
 
 import lameenc
 import pyaudio
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QMainWindow, QTextEdit, QDialog, QVBoxLayout, QLabel, \
-    QLineEdit, QButtonGroup, QRadioButton, QDialogButtonBox, QMessageBox, QPushButton, QComboBox
+    QLineEdit, QMessageBox, QPushButton, QComboBox
 
 
 class TrayIcon(QSystemTrayIcon):
